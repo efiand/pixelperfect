@@ -1,3 +1,3 @@
-import loadPixelperfect from './index.js';
+import loadPixelperfect from "./index.js";
 
 loadPixelperfect();

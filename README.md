@@ -24,10 +24,13 @@
 <script>
   window.pixelperfect = {
     breakpoints: [320, 768, 1260, 1380, 1600],
-    folder: 'img/pixelperfect'
+    folder: "img/pixelperfect",
   };
 </script>
-<script src="https://efiand.github.io/pixelperfect-tool/pixelperfect.min.js" defer></script>
+<script
+  src="https://efiand.github.io/pixelperfect-tool/pixelperfect.min.js"
+  defer
+></script>
 ```
 
 Отсутствие в production-режиме изображений PP и кода подключения скрипта – настраивается разработчиком отдельно исходя из возможностей его сборки.
@@ -43,20 +46,20 @@
 ```js
 window.pixelperfect = {
   breakpoints: [320, 768, 1260, 1380, 1600],
-  folder: 'img/pixelperfect'
+  folder: "img/pixelperfect",
 };
 
-export * from 'pixelperfect-tool/loader.js';
+export * from "pixelperfect-tool/loader.js";
 ```
 
 ### Использование лоадера
 
 ```js
-import loadPixelperfect from 'pixelperfect-tool';
+import loadPixelperfect from "pixelperfect-tool";
 
 loadPixelperfect({
   breakpoints: [320, 768, 1260, 1380, 1600],
-  folder: 'img/pixelperfect'
+  folder: "img/pixelperfect",
 });
 ```
 
@@ -70,12 +73,12 @@ Renderless-компонент с возможностью добавления �
 </template>
 
 <script lang="ts" setup>
-  import type { PixelperfectOptions } from 'pixelperfect-tool';
-  import PixelperfectTool from 'pixelperfect-tool/vue';
+  import type { PixelperfectOptions } from "pixelperfect-tool";
+  import PixelperfectTool from "pixelperfect-tool/vue";
 
   const pixelperfectOptions: PixelperfectOptions = {
     breakpoints: [320, 768, 1260, 1380, 1600],
-    folder: 'img/pixelperfect'
+    folder: "img/pixelperfect",
   };
 </script>
 ```
@@ -88,21 +91,21 @@ Renderless-компонент с возможностью добавления �
 
 ```js
 export default defineNuxtConfig({
-  modules: ['pixelperfect-tool/nuxt'],
+  modules: ["pixelperfect-tool/nuxt"],
 
   // Кастомный путь к изображениям, чтобы они не попадали в билд
   nitro: {
-    ...(process.env.NODE_ENV === 'development'
+    ...(process.env.NODE_ENV === "development"
       ? {
           publicAssets: [
             {
-              baseURL: 'pixelperfect', // доступен в браузере как /pixelperfect
-              dir: 'dev/pixelperfect' // путь относительно @/server/
-            }
-          ]
+              baseURL: "pixelperfect", // доступен в браузере как /pixelperfect
+              dir: "dev/pixelperfect", // путь относительно @/server/
+            },
+          ],
         }
-      : {})
-  }
+      : {}),
+  },
 });
 ```
 

@@ -1,13 +1,20 @@
 {
   "name": "pixelperfect-tool",
-  "version": "1.8.1",
+  "version": "1.9.2",
   "description": "Pixel perfect tool for development mode",
   "main": "index.js",
   "type": "module",
+  "pre-commit": [
+    "lint-format"
+  ],
+  "browserslist": [
+    "> 0.2%",
+    "last 6 version"
+  ],
   "scripts": {
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm run build"
+    "build": "vite build && node ./post-build.js",
+    "lint-format": "prettier --write . && eslint . --fix",
+    "lint": "prettier --check . && eslint ."
   },
   "repository": {
     "type": "git",
@@ -20,10 +27,9 @@
     "url": "https://github.com/efiand/pixelperfect-tool/issues"
   },
   "homepage": "https://efiand.github.io/pixelperfect-tool",
-  "dependencies": {
-    "copy-webpack-plugin": "11.0.0",
-    "terser-webpack-plugin": "5.3.9",
-    "webpack": "5.88.2",
-    "webpack-cli": "5.1.4"
+  "devDependencies": {
+    "efiand-shared": "0.1.8",
+    "pre-commit": "1.2.2",
+    "vite": "5.4.10"
   }
 }

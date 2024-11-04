@@ -1,8 +1,8 @@
 export interface PixelperfectOptions {
-  breakpoints?: number[] | null;
+  breakpoints?: null | number[];
   ext?: string;
   folder?: string;
-  page?: string | null;
+  page?: null | string;
   selector?: string;
 }
 

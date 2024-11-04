@@ -2,6 +2,10 @@
 
 Undescribed versions are deprecated.
 
+## 1.9.2
+
+- Webpack -> vite.
+
 ## 1.8.1
 
 - Remove ended slash from page name.

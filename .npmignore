@@ -1,0 +1,11 @@
+.editorconfig
+.github
+.gitignore
+dist
+eslint.config.js
+node_modules
+package-lock.json
+package.json
+post-build.js
+prettier.config.js
+vite.config.js
